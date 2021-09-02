@@ -9,6 +9,15 @@ const Events = () => {
       <EventBar />
       <EventBar />
       <EventBar />
+      <EventBar />
+      <EventBar />
+      <EventBar />
+      <EventBar />
+      <EventBar />
+      <EventBar />
+      <EventBar />
+      <EventBar />
+      <EventBar />
     </section>
   )
 }

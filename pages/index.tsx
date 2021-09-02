@@ -5,6 +5,11 @@ const Home = () => {
   return (
     <div className={styles.containerContent}>
 
+      <div className={styles.welcome}>
+        <h2>Seja bem-vindo! 😁</h2>
+        <p>Temos muitos eventos preparados para você </p>
+      </div>
+
       <Link href="/manager/signin">
         <div className={styles.card}>
           <img src="/assets/home/manager.jpg" alt="Manager" />
