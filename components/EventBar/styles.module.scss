@@ -1,0 +1,50 @@
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  border: 1px solid #ffc296;
+  border-radius: 0 8px 8px 0;
+
+  margin-bottom: 10px;
+
+
+  .informations {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+
+    background: #cbecff;
+    height: 40px;
+
+    strong,
+    span {
+      margin-left: 4px;
+    }
+
+    strong {
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    span {
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+  }
+
+  .continue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #DC5E04;
+    opacity: 0.7;
+    height: 40px;
+    width: 40px;
+
+    border-radius: 0 7px 7px 0;
+  }
+}

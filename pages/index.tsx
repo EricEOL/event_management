@@ -12,14 +12,14 @@ const Home = () => {
         </div>
       </Link>
 
-      <Link href="#">
+      <Link href="/events">
         <div className={styles.card}>
           <img src="/assets/home/student.jpg" alt="Manager" />
           <span>Sou Aluno</span>
         </div>
       </Link>
 
-      <Link href="#">
+      <Link href="/events">
         <div className={styles.card}>
           <img src="/assets/home/speaker.jpg" alt="Manager" />
           <span>Sou Palestrante</span>
