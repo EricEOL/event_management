@@ -1,4 +1,9 @@
 .section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   width: 90vw;
   margin: 0 auto;
 
@@ -8,5 +13,7 @@
     color: #DC5E04;
 
     margin-bottom: 20px;
+
+    width: 100%;
   }
 }

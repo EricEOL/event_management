@@ -3,14 +3,14 @@ import { FiChevronRight } from 'react-icons/fi';
 
 import styles from './styles.module.scss';
 
-export const EventBar = () => {
+export const EventBar = ({title, date}) => {
   return (
     <Link href="#">
       <div className={styles.box}>
 
         <div className={styles.informations}>
-          <strong>Inovação Técnológica</strong>
-          <span>Data: 10/02/2022</span>
+          <strong>{title}</strong>
+          <span>Data: {date}</span>
         </div>
 
         <div className={styles.continue}>
