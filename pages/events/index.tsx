@@ -1,10 +1,16 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { api } from '../../services/api';
 import { EventBar } from '../../components/EventBar';
 import { Spinner } from '../../components/Spinner';
 import styles from './styles.module.scss';
 
-const Events = () => {
+interface EventProps {
+  title: string;
+  data: string;
+}
+
+const Events = ({ data }) => {
 
   const screenStates = {
     loading: "LOADING",
@@ -12,6 +18,7 @@ const Events = () => {
   }
 
   const [screenState, setScreenState] = useState(screenStates.loading);
+  const [events, setEvets] = useState(data);
 
   useEffect(() => {
     setTimeout(() => {
@@ -25,17 +32,24 @@ const Events = () => {
 
       {screenState === screenStates.loading && <Spinner />}
 
-      {screenState === screenStates.loaded && (
-        <>
-          <EventBar title="Inovação Tecnológica" date="10/02/2022"/>
-          <EventBar title="Como se tornar um FullStack Developer" date="12/02/2022"/>
-          <EventBar title="Frameworks Javascript" date="14/02/2022"/>
-          <EventBar title="Utilizando uma API Rest" date="04/03/2022"/>
-        </>
-      )}
+      {screenState === screenStates.loaded && events.map(event => (
+        <Link href="#" key={event.id}>
+          <EventBar title={event.title} date={event.date} />
+        </Link>
+      ))}
 
     </section>
   )
+}
+
+export async function getStaticProps(context) {
+  const res = await api.get('events');
+
+  return {
+    props: {
+      data: res.data
+    }
+  }
 }
 
 export default Events;

@@ -1,0 +1,24 @@
+{
+  "events": [
+    {
+      "id": "0001",
+      "title": "Inovação Tecnológica",
+      "date": "10/02/2022"
+    },
+    {
+      "id": "0002",
+      "title": "Como se tornar um FullStack Developer",
+      "date": "12/02/2022"
+    },
+    {
+      "id": "0003",
+      "title": "Frameworks Javascript",
+      "date": "14/02/2022"
+    },
+    {
+      "id": "0004",
+      "title": "Utilizando uma API Rest",
+      "date": "04/03/2022"
+    }
+  ]
+}
