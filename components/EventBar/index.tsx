@@ -3,9 +3,9 @@ import { FiChevronRight } from 'react-icons/fi';
 
 import styles from './styles.module.scss';
 
-export const EventBar = ({title, date}) => {
+export const EventBar = ({link, title, date}) => {
   return (
-    <Link href="#">
+    <Link href={link}>
       <div className={styles.box}>
 
         <div className={styles.informations}>

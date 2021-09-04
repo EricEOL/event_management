@@ -1,7 +1,23 @@
 import Link from 'next/link';
+import { setCookie } from 'nookies';
 import styles from './home.module.scss';
 
 const Home = () => {
+
+  function getProfile(profile) {
+    switch (profile) {
+      case 'manager':
+        setCookie(null, 'profile', 'manager');
+        break;
+      case 'student':
+        setCookie(null, 'profile', 'student');
+        break;
+      case 'speaker':
+        setCookie(null, 'profile', 'speaker');
+        break;
+    }
+  }
+
   return (
     <div className={styles.containerContent}>
 
@@ -11,22 +27,22 @@ const Home = () => {
       </div>
 
       <Link href="/manager/signin">
-        <div className={styles.card}>
+        <div className={styles.card} onClick={() => getProfile("manager")}>
           <img src="/assets/home/manager.jpg" alt="Manager" />
           <span>Sou Gestor</span>
         </div>
       </Link>
 
       <Link href="/events">
-        <div className={styles.card}>
-          <img src="/assets/home/student.jpg" alt="Manager" />
+        <div className={styles.card} onClick={() => getProfile("student")}>
+          <img src="/assets/home/student.jpg" alt="Student" />
           <span>Sou Aluno</span>
         </div>
       </Link>
 
       <Link href="/events">
-        <div className={styles.card}>
-          <img src="/assets/home/speaker.jpg" alt="Manager" />
+        <div className={styles.card} onClick={() => getProfile("speaker")}>
+          <img src="/assets/home/speaker.jpg" alt="Speaker" />
           <span>Sou Palestrante</span>
         </div>
       </Link>

@@ -1,16 +1,14 @@
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
+import nookies, { setCookie } from 'nookies';
+
 import { api } from '../../services/api';
+
+import { Title } from '../../components/Title';
 import { EventBar } from '../../components/EventBar';
 import { Spinner } from '../../components/Spinner';
 import styles from './styles.module.scss';
 
-interface EventProps {
-  title: string;
-  data: string;
-}
-
-const Events = ({ data }) => {
+const Events = ({ data, profile }) => {
 
   const screenStates = {
     loading: "LOADING",
@@ -28,26 +26,45 @@ const Events = ({ data }) => {
 
   return (
     <section className={styles.section}>
-      <h2>Eventos Disponíveis</h2>
+      <Title title="Eventos Disponíveis" />
 
       {screenState === screenStates.loading && <Spinner />}
 
       {screenState === screenStates.loaded && events.map(event => (
-        <Link href="#" key={event.id}>
-          <EventBar title={event.title} date={event.date} />
-        </Link>
+        <EventBar 
+          key={event.id} 
+          link={profile === 'student' ? `/events/student/${event.id}` : `/events/speaker/${event.id}`}
+          title={event.title} 
+          date={event.date} 
+        />
       ))}
 
     </section>
   )
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const res = await api.get('events');
+  
+  const cookies = nookies.get(context);
+
+  if(!cookies) {
+    setCookie(context, 'profile', 'student');
+  }
+
+  const profile = cookies['profile'];
+
+  let data;
+  if(profile === 'student') {
+    data = res.data.filter(event => event.speaker);
+  } else {
+    data = res.data.filter(event => !event.speaker);
+  }
 
   return {
     props: {
-      data: res.data
+      data,
+      profile
     }
   }
 }

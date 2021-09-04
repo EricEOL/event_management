@@ -3,22 +3,57 @@
     {
       "id": "0001",
       "title": "Inovação Tecnológica",
-      "date": "10/02/2022"
+      "speaker": "Eric Lopes",
+      "date": "10/02/2022",
+      "duration": "2h 50 min",
+      "manager": {
+        "name": "Thamiris Lopes",
+        "email": "thamiris@gmail.com"
+      }
     },
     {
       "id": "0002",
       "title": "Como se tornar um FullStack Developer",
-      "date": "12/02/2022"
+      "speaker": "Eric Lopes",
+      "date": "12/02/2022",
+      "duration":"3h 30 min",
+      "manager": {
+        "name": "Thamiris Lopes",
+        "email": "thamiris@gmail.com"
+      }
     },
     {
       "id": "0003",
       "title": "Frameworks Javascript",
-      "date": "14/02/2022"
+      "speaker": "",
+      "date": "14/02/2022",
+      "duration":"2h 50 min",
+      "manager": {
+        "name": "Thamiris Lopes",
+        "email": "thamiris@gmail.com"
+      }
     },
     {
       "id": "0004",
       "title": "Utilizando uma API Rest",
-      "date": "04/03/2022"
+      "speaker": "Eric Lopes",
+      "date": "04/03/2022",
+      "duration": "3h 30 min",
+      "manager": {
+        "name": "Thamiris Lopes",
+        "email": "thamiris@gmail.com"
+      }
+    },
+    {
+      "id": "0005",
+      "title": "Aprenda SCRUM de uma vez por todas",
+      "speaker": "",
+      "date": "05/03/2022",
+      "duration": "3h 30 min",
+      "manager": {
+        "name": "Thamiris Lopes",
+        "email": "thamiris@gmail.com"
+      }
     }
   ]
 }
