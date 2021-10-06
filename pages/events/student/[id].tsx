@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Title } from "../../../components/Title";
+import { EventInformations } from "../../../components/EventInformations";
 import { api } from "../../../services/api";
 
 const Event = ({ eventData }) => {
 
-  const [event, setEvent] = useState(eventData);
-
   return (
     <>
-      <Title title="Informações da Palestra" />
-      <h2>Evento: {event.title}</h2>
+      <EventInformations {...eventData}>
+        <Title title="Informações da Palestra" />
+      </EventInformations>
     </>
   )
 }
